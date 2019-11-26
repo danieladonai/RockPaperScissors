@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script>
+      function computerPlay() {
+        var hands = ["rock", "paper", "scissors"];
+        return hands[Math.floor(Math.random()* hands.length)];
+      }
+
+      function playerSelection() {
+        let playerChoice = prompt("Let's play! Choose Rock, Paper or Scissor")
+        return playerChoice.toLowerCase()
+      }
+      // const player = playerSelection ()
+      // const computer = computerPlay ()
+
+      // console.log(player)
+      // console.log(computer)
+
+      function gameRules(){
+        // pass
+      }
+
+      function playGame (playerSelection, computerSelection) {
+        if (playerSelection !== computerSelection){
+          if (playerSelection === "rock") {
+            if (computerSelection === "scissors"){
+            // return console.log("You win!");
+            return 1
+            }
+            else {
+              // return console.log("You lose!")
+              return 0
+            }
+          }
+
+          if (playerSelection === "paper") {
+            if (computerSelection === "rock"){
+            // return console.log("You win!")
+            return 1
+            }
+            else {
+              // return console.log("You lose!")
+              return 0
+            }
+          }
+
+          if (playerSelection === "scissor") {
+            if (computerSelection === "paper"){
+            // return console.log("You win!")
+            return 1
+            }
+            else {
+              // return console.log("You lose!")
+              return 0
+            }
+          }
+        } else {
+          // return console.log("It's a tie!")
+          return null
+        }
+      }
+         // if palyerSelection
+
+      // playGame(player, computer)
+      // console.log(playGame)
+
+
+
+      function game(){
+        let i = 1;
+        let playerScore = 0;
+        let computerScore = 0;
+
+        while (i <= 5) {
+          i ++;
+          var player1 = playerSelection();
+          var computer2 = computerPlay();
+          console.log(player1);
+          console.log(computer2);
+
+          var gameResult = playGame(player1, computer2);
+
+          console.log(gameResult)
+
+          if (gameResult === 1) {
+            playerScore ++;
+            console.log(playerScore);
+          }
+          else if (gameResult === 0) {
+            computerScore ++;
+            console.log(computerScore);
+          }
+        }
+        if (playerScore > computerScore) {
+          return console.log('Playber score ='+ playerScore + ' Computer score = ' + computerScore + '  Player Wins!')
+        }
+        else if (playerScore < computerScore) {
+          return console.log('Playber score ='+ playerScore + ' Computer score = ' + computerScore + ' Computer Wins!')
+        }
+        else {
+          return console.log('Playber score ='+ playerScore + ' Computer score = ' + computerScore + ' Issa Tie!')
+
+        }
+      }
+
+      game()
+    </script>
+
+  </body>
+</html>
